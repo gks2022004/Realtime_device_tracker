@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "prestart": "ejs-cli ./views/index.ejs -o ./views/index.html"
   },
   "keywords": [],
   "author": "@gks2022004",
@@ -14,5 +14,8 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "ejs-cli": "^2.2.3"
   }
 }
