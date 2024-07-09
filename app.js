@@ -23,9 +23,9 @@ io.on("connection", function (socket)  {
     console.log("connected");
 });
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "views", "index.html"));
-});
+ // app.get("/", function(req, res) {
+ //     res.sendFile(path.join(__dirname, "views", "index.html"));
+ // });
 
 server.listen(3000, () => {
     console.log("Server started on port 3000");
