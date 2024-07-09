@@ -7,13 +7,8 @@ const socketio = require("socket.io");
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.set("view engine", "ejs");
+
 app.use(express.static(path.join(__dirname, "public")));
-
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "views", "index.html"));
-});
-
 
 io.on("connection", function (socket)  {
     socket.on("send-location", function (data) {
@@ -29,7 +24,7 @@ io.on("connection", function (socket)  {
 });
 
 app.get("/", function(req, res) {
-    res.render("index");
+    res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 server.listen(3000, () => {
